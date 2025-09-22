@@ -7,14 +7,74 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="particles" id="particles"></div>
+    
     <div class="game-container">
-        <h1>Tic Tac Toe</h1>
-        <div class="status" id="status">Your turn (X)</div>
-        <div class="board" id="board">
-            <!-- Cells will be added by JavaScript -->
+        <button class="sound-toggle" id="soundToggle" title="Toggle Sound">🔊</button>
+        
+        <div class="header">
+            <h1 class="title">TIC TAC TOE</h1>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label class="control-label">Game Mode</label>
+                    <select id="gameMode">
+                        <option value="computer">vs Computer</option>
+                        <option value="human">vs Human</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Difficulty</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="impossible">Impossible</option>
+                    </select>
+                </div>
+            </div>
         </div>
-        <button class="restart-btn" id="restart">Restart Game</button>
+
+        <div class="scoreboard">
+            <div class="score-item">
+                <div class="score-label">Player X</div>
+                <div class="score-value player-x" id="scoreX">0</div>
+            </div>
+            <div class="score-item">
+                <div class="score-label">Draws</div>
+                <div class="score-value draws" id="scoreDraw">0</div>
+            </div>
+            <div class="score-item">
+                <div class="score-label">Player O</div>
+                <div class="score-value player-o" id="scoreO">0</div>
+            </div>
+        </div>
+
+        <div class="status" id="status">Player X's Turn</div>
+
+        <div class="board" id="board"></div>
+
+        <div class="actions">
+            <button class="btn btn-primary" id="newGame">New Game</button>
+            <button class="btn btn-secondary" id="resetStats">Reset Stats</button>
+        </div>
+
+        <div class="game-stats">
+            <div class="stat-item">
+                <div>Games Played</div>
+                <div class="stat-value" id="totalGames">0</div>
+            </div>
+            <div class="stat-item">
+                <div>Win Rate</div>
+                <div class="stat-value" id="winRate">0%</div>
+            </div>
+            <div class="stat-item">
+                <div>Best Streak</div>
+                <div class="stat-value" id="bestStreak">0</div>
+            </div>
+        </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
